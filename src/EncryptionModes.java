@@ -95,4 +95,43 @@ class EncryptionModes {
         return new String(res);
     }
 
+    public static void main(String[] args) {
+        char[][] d = {
+                {0x05, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07}, {0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F}
+        };
+        char[][] x = {{0x75, 0xBB}, {0x9A, 0x4D}, {0x6B, 0xCB}, {0x45, 0x2A}, {0x71, 0x3A}, {0xDF, 0xB3}, {0x17, 0x90}, {0x51, 0x1F}};
+        EncryptionModes.shiftRow(EncryptionModes.substitutionn(d));
+    }
+
+    public static char[][] substitutionn(char[][] masData) {
+        char[][] ressult = new char[masData.length][masData[0].length];
+        for (int i = 0; i < masData.length; i++) {
+            for (int j = 0; j < masData[i].length; j++) {
+                ressult[i][j] = Substitution.KEY[j % 4][masData[i][j]];
+                System.out.print(Integer.toHexString(ressult[i][j]).toUpperCase() + " ");
+                //75 BB 9A 4D 6B CB 45 2A 71 3A DF B3 17 90 51 1F
+            }
+        }
+        System.out.println();
+        return ressult;
+    }
+
+    public static char[][] shiftRow(char[][] masData) {
+        char[][] ressult = new char[masData.length][masData[0].length];
+        for (int i = 4; i < 8; i++) {
+            char tmp = masData[0][i];
+            masData[0][i] = masData[1][i];
+            masData[1][i] = tmp;
+                //ressult[i][j] = masData[i][(j + i) % masData[i].length];
+                //System.out.print(Integer.toHexString(ressult[i][j]).toUpperCase() + " ");
+        }
+        for (int i = 0; i < masData.length; i++){
+            for (int j = 0; j < masData[i].length; j++){
+                System.out.print(Integer.toHexString(masData[i][j]).toUpperCase() + " ");
+            }
+        }
+        System.out.println();
+
+        return masData;
+    } //75 BB 9A 4D 17 90 51 1F 71 3A DF B3 6B CB 45 2A
 }

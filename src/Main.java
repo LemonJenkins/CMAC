@@ -6,12 +6,11 @@ import static java.nio.file.Files.exists;
 public class Main {
 
     public static void main(String[] args) {
-        String text = "This new text \nThis new text2\nThis new text3\nThis new text4\n";
-        String fileKey = "D:\\dev\\CMAC\\src\\K.txt";
-        String fileVector = "D:\\dev\\CMAC\\src\\V.txt";
-        String fileMessage = "D:\\dev\\CMAC\\src\\M.txt";
-        String fileEncrypted = "D:\\dev\\CMAC\\src\\E.txt";
-        String fileDecrypted = "D:\\dev\\CMAC\\src\\DE.txt";
+        String fileKey = "D:\\dev\\CMAC\\K.txt";
+        String fileVector = "D:\\dev\\CMAC\\V.txt";
+        String fileMessage = "D:\\dev\\CMAC\\M.txt";
+        String fileEncrypted = "D:\\dev\\CMAC\\E.txt";
+        String fileDecrypted = "D:\\dev\\CMAC\\DE.txt";
         String encoding = "UTF8";
         String message = "";
         String key = "";
