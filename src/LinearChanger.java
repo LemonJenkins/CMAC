@@ -38,12 +38,12 @@ public class LinearChanger {
     }
 
     public static char[] getMatrixColumn(char[][] matrix, int columnNumber) {
-        char[] result = new char[matrix.length];
-        for (int i = 0; i < matrix.length; i++) {
-            result[i] = matrix[i][columnNumber];
-        }
-        return result;
-
+//        char[] result = new char[matrix.length];
+//        for (int i = 0; i < matrix.length; i++) {
+//            result[i] = matrix[i][columnNumber];
+//        }
+//        return result;
+        return matrix[columnNumber];
     }
 
     public static char[][] linearTransformation(char[][] matrix) {
